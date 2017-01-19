@@ -7,13 +7,13 @@ module rx_rs232
 	output				oDONE			//1Frame finish oDONE=1
 );
 //9600bps 143MHz clkNUM_bit=(1/9600)/7ns=14881
-localparam		clkNUM_bit		=	14881	;	//14881 clk/bit
+// localparam		clkNUM_bit		=	14881	;	//14881 clk/bit
 //UART 0-START [1:8]-DATA 9-EVEN/OOD 10-STOP
 //Frame: 1F=(1/9600)*11=0.0011458s=163691 clk/frame
-localparam		clkNUM_frame	=	163691	;
+// localparam		clkNUM_frame	=	163691	;
 //=============== SIM =====================================
-// localparam		clkNUM_bit		=	12		;	//12 clk/bit for SIM
-// localparam		clkNUM_frame	=	clkNUM_bit*11	;	//12*11 for SIM
+localparam		clkNUM_bit		=	12		;	//12 clk/bit for SIM
+localparam		clkNUM_frame	=	clkNUM_bit*11	;	//12*11 for SIM
 //=========================================================
 reg				D_sig		;	//Detect signal
 reg				F_sig		;	//Finish signal
