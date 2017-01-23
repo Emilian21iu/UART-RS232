@@ -7,15 +7,17 @@ module tx_rs232
 	output			oDATA	,
 	output			oFINISH	
 );
-//9600bps 143MHz clkNUM_bit=(1/9600)/7ns=14881
-// localparam		clkNUM_bit		=	14881	;	//14881 clk/bit
-//UART 0-START [1:8]-DATA 9-EVEN/OOD 10-STOP
-//Frame: 1F=(1/9600)*11=0.0011458s=163691 clk/frame
-// localparam		clkNUM_frame	=	163691	;
+//9600bps 	143MHz 	clkNUM_bit=(1/9600)/7ns		=	14881
+//9600bps	100MHz	clkNUM_bit=(1/9600)/10ns	=	10417
+//9600bps	 50MHz	clkNUM_bit=(1/9600)/20ns	=	5208
+localparam		clkNUM_bit		=	5208	;
 //=============== SIM ===========================================
-localparam		clkNUM_bit		=	12				;	//12 clk/bit for SIM
-localparam		clkNUM_frame	=	clkNUM_bit*11	;	//12*11 for SIM
+// localparam		clkNUM_bit		=	12				;	//12 clk/bit for SIM
 //===============================================================
+//UART 0-START [1:8]-DATA 9-EVEN/OOD 10-STOP
+//PS:9-EVEN/OOD ALWAYS 1
+//Frame: 1F=(1/9600)*11=0.0011458s
+localparam		clkNUM_frame	=	clkNUM_bit*11	;
 reg				txDATA		;
 reg		[ 7:0]	REG_DATA	;
 reg		[17:0]	CNT_frame	;	//163691 clk/frame

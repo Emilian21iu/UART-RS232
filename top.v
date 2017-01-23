@@ -30,15 +30,15 @@ end
 //=========================================================
 rx_rs232	rx_rs232_INST
 (
-	.clk_s			(clk_s),		//clk=143MHz
-	.rstn_s			(rstn_s	),		//rstn_s=0 effect
+	.clk_s			(clk_s	),		
+	.rstn_s			(rstn_s	),
 	.iDATA			(iDATA	),
 	.oDATA			(rxDATA	),
-	.oDONE			(rxDONE	)		//1Frame finish oDONE=1
+	.oDONE			(rxDONE	)
 );
 tx_rs232	tx_rs232_INST
 (
-	.clk_s			(clk_s),
+	.clk_s			(clk_s	),
 	.rstn_s			(rstn_s	),
 	.iSEND			(rxDONE	),
 	.iDATA			(rxDATA	),
