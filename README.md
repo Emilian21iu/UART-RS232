@@ -9,15 +9,9 @@ In simulation mode, I assume one bit per 12 clocks.
 ![top_wave](https://github.com/very9s/UART-RS232/blob/master/top_wave.jpg)
 In the synthesis process, variable clkNUM_bit should be set to the corresponding number of clocks per bit
 
-Welcome to my [blog](http://very9s.net)
-
 ---------------------------------
 
 这是RS232 收发模块的verilog源代码。原理简单，代码也简单。 
 同时我设计了一个简单的验证模块作为顶层。顶层模块的功能就是将收到的数据发送回去。
 在仿真模式下，假设每12个周期一位。
 在综合过程中，变量clkNUM_bit应设置为每位的相应时钟数。
-
-
-
-欢迎我的[博客](http://very9s.net)
